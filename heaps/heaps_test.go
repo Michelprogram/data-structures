@@ -21,3 +21,19 @@ func TestHeapify(t *testing.T) {
 	}
 
 }
+
+func TestSwap(t *testing.T) {
+
+	table := []int{3, 9, 2, 1, 4, 5}
+
+	heap := &Heaps{
+		arr: table,
+	}
+
+	heap.Swap(1, 2)
+
+	if heap.arr[1] != 2 {
+		t.Errorf("Heapify was incorrect, got: %v, want: %v.", heap.arr[1], 2)
+	}
+
+}

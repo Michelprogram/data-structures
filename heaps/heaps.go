@@ -30,10 +30,19 @@ func (h *Heaps) HeapifyUp(startIndex int) {
 
 	var parentChild int = h.parentChild(startIndex)
 
-	for h.arr[parentChild] < h.arr[startIndex] {
+	var minus int = h.arr[parentChild]
+
+	var max int = h.arr[startIndex]
+
+	for minus < max {
 
 		h.Swap(h.parentChild(startIndex), startIndex)
+
 		startIndex = h.parentChild(startIndex)
+
+		parentChild = h.parentChild(startIndex)
+		minus = h.arr[parentChild]
+		max = h.arr[startIndex]
 	}
 
 }
