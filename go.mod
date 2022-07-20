@@ -1,4 +1,4 @@
-module data-structures
+module github.com/Michelprogram/data-structures
 
 go 1.18
 
