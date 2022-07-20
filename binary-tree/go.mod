@@ -1,4 +1,4 @@
-module github.com/Michelprogram/data-structures/binary-tree
+module github.com/Michelprogram/data-structures/binarytree
 
 go 1.18
 

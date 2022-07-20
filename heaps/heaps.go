@@ -1,4 +1,4 @@
-package main
+package heaps
 
 type Heaps struct {
 	arr  []int
