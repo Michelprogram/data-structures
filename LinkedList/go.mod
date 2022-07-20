@@ -1,4 +1,4 @@
-module linkedlist
+module github.com/Michelprogram/data-structures/linkedlist
 
 go 1.18
 
