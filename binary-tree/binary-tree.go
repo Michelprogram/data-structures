@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"strings"
 
 	"golang.org/x/exp/constraints"
 )
@@ -206,7 +207,7 @@ func (t Tree[T]) Delete(value T) {
 				} else if node.hasOneChild() {
 					//Case one node has one child
 					var childOfNode *Node[T] = nil
-					
+
 					if node.left != nil {
 						childOfNode = node.left
 					} else {
@@ -238,45 +239,6 @@ func (t Tree[T]) Delete(value T) {
 	}
 
 }
-
-/*
-else {
-					var childOfNode *Node[T] = nil
-
-					if node.hasOneChild() {
-						//Case one node has one child
-
-						if node.left != nil {
-							childOfNode = node.left
-						} else {
-							childOfNode = node.right
-						}
-					} else {
-						//Case left two child
-
-						i := t.Inorder(node)
-
-						fmt.Println(i)
-
-						if node.left.data > node.right.data {
-							childOfNode = node.left
-							childOfNode.left = node.left
-
-						} else {
-							childOfNode = node.right
-							childOfNode.left = node.left
-
-						}
-					}
-
-					//Side of previous node
-					if parent.left.data == node.data {
-						parent.left = childOfNode
-					} else {
-						parent.right = childOfNode
-					}
-				}
-*/
 
 func (t Tree[T]) GetParent(node *Node[T], value T) *Node[T] {
 
@@ -311,10 +273,32 @@ func (t Tree[T]) IsEmpty() bool {
 
 func (t Tree[T]) Inorder(node *Node[T]) *Node[T] {
 
+	if t.IsEmpty() {
+		return nil
+	}
+
 	tree := node.right
 	for tree.left != nil {
 		tree = tree.left
 	}
 	return tree
+
+}
+
+func updateStringPointer(storage *string, value string) {
+
+	tempo := *storage + value
+
+	*storage = tempo
+}
+
+func (t Tree[T]) Display(node *Node[T], level int) {
+
+	if node != nil {
+		t.Display(node.left, level+1)
+		str := fmt.Sprintf("%s -> %v", strings.Repeat(" ", 4*level), node.data)
+		fmt.Println(str)
+		t.Display(node.right, level+1)
+	}
 
 }

@@ -294,3 +294,11 @@ func TestRemoveNodeTwoChild2(t *testing.T) {
 	}
 
 }
+
+func TestDispaly(t *testing.T) {
+
+	tree := PerfectBinaryTree()
+
+	tree.Display(tree.root, 0)
+
+}
