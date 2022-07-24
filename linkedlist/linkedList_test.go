@@ -9,11 +9,11 @@ func initLinkedList() LinkedList[int] {
 
 	linkedList := NewLinkedList[int]()
 
-	linkedList.head = node1
+	linkedList.Head = node1
 
-	node1.next = node2
+	node1.Next = node2
 
-	node2.next = node3
+	node2.Next = node3
 
 	return *linkedList
 }
@@ -23,11 +23,11 @@ func unsortedLinkedList() LinkedList[int] {
 
 	linkedList := NewLinkedList[int]()
 
-	linkedList.head = node1
+	linkedList.Head = node1
 
-	node1.next = node2
+	node1.Next = node2
 
-	node2.next = node3
+	node2.Next = node3
 
 	return *linkedList
 }
@@ -36,14 +36,14 @@ func TestNewNode(t *testing.T) {
 
 	node1, node2, tail := NewNode(1, nil), NewNode(2, nil), NewNode(3, nil)
 
-	node1.next = node2
+	node1.Next = node2
 
-	node2.next = tail
+	node2.Next = tail
 
-	head := NewNode(1, node1)
+	Head := NewNode(1, node1)
 
-	if head.next.data != 1 {
-		t.Errorf("Node was incorrect, got: %d, want: %d.", head.next.data, 1)
+	if Head.Next.data != 1 {
+		t.Errorf("Node was incorrect, got: %d, want: %d.", Head.Next.data, 1)
 
 	}
 
@@ -53,8 +53,8 @@ func TestNewLinkedList(t *testing.T) {
 
 	linkedList := initLinkedList()
 
-	if linkedList.head.data != 1 {
-		t.Errorf("Head was incorrect, got: %d, want: %d.", linkedList.head.data, 1)
+	if linkedList.Head.data != 1 {
+		t.Errorf("Head was incorrect, got: %d, want: %d.", linkedList.Head.data, 1)
 	}
 
 }
