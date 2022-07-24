@@ -3,7 +3,7 @@ package main
 import (
 	"github.com/Michelprogram/data-structures/binarytree"
 	"github.com/Michelprogram/data-structures/stack"
-	"github.com/Michelprogram/data-structures/linkedlist"
+	"github.com/Michelprogram/data-structures/hashmap"
 )
 
 func main() {
@@ -13,5 +13,6 @@ func main() {
 
 	stack.NewStack[int](1).IsEmpty()
 
-	linkedlist.NewLinkedList[]()
+	hashmap.NewHash(10)
+
 }
